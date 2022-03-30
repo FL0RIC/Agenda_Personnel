@@ -4,23 +4,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/bootstrap.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./static/coloris.min.css">
     <title>Mon Agenda - Création de Catégorie</title>
 </head>
 <body>
-    <h1 style="color: #375a7f;" > <u>Crée une Catégorie</u> </h1>
+    <h1>
+        <div class="titre_page">Crée une Catégorie</div>
+    </h1>
 
-    <div style="text-align: center;">
+    <div class="formulaire">
         <form id="categorie" method="POST" action="/create_categorie">
         
             <p>Nom de la catégorie : </p>
-            <textarea name="nom_categorie" id="" cols="30" rows="10"></textarea>
+            <input type="text" class="form-control" name="nom_categorie" aria-describedby="emailHelp" placeholder="Enter Title">
             <p>Couleur de la catégorie : </p>
-            <input class="form-control form-control-color" name="color" type="color">
-            <button type="submit">Valider</button>
+            <input type="text" value="green" data-coloris>
+            <button type="submit" class="btn btn-primary">Valider</button>
             {% if error == True %}
                 <p>Vous avez essayer de crée une catégorie qui possède déjà le nom d'une catégorie existante. Veuillez réessayer.</p>
             {% endif %}
         </form>
     </div>
+    <script type="text/javascript" src="./static/coloris.min.js"></script>
 </body>
 </html>

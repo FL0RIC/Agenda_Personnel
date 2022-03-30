@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/bootstrap.css">
+    <link rel="stylesheet" href="./static/style.css">
     <title>Mon Agenda</title>
 </head>
 
 
 <body>
-    <h1 style="color: #375a7f;" > <u>Agenda Personnel</u> </h1>
+    <h1>
+        <div class="titre_page" >Agenda Personnel</div>
+    </h1>
     
-    <button onclick="self.location.href='/create_work'" type="button" class="btn btn-primary">+</button>
+    <button onclick="self.location.href='/create_work'" type="button" class="btn btn-primary bouton_ajout">+</button>
 
-    <ul class="nav nav-tabs justify-content-center">
+    <ul class="nav nav-tabs justify-content-center devoir">
         <li class="nav-item">
             <a class="nav-link active" data-bs-toggle="tab" href="#notdone">Devoir à Faire</a>
         </li>
