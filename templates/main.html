@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/bootstrap.css">
+    <title>Mon Agenda</title>
+</head>
+
+
+<body>
+    <h1 style="color: #375a7f;" > <u>Agenda Personnel</u> </h1>
+    
+    <button onclick="self.location.href='/create_work'" type="button" class="btn btn-primary">+</button>
+
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#notdone">Devoir à Faire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#done">Devoir Fait</a>
+        </li>
+    </ul>
+    <br>
+    <form action="">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="notdone">
+            {% if work == [] %}
+                <p style="text-align: center;"><img src="./static/Sleeping_bat-rafiki.png" style="width: 400px; height: 400px;" alt=""></p>
+                <p style="text-align: center;">Vous n'avez aucun devoir à faire. Il serait temps de bouger son cul et faire quelque chose dans la vie !</p>
+            {% else %}
+                {% for element in work %}
+                <div class="card border-primary mb-3 mx-auto" style="max-width: 50rem;">
+                    <div style="color: {{ element.couleur }}; " class="card-header"><h5>{{ element.titre }}</h5></div>
+                    <div class="card-body">
+                        <p>{{ element.description }}</p>
+                        <br>
+                        <figcaption class="blockquote-footer">A faire pour le <u>{% print(element.date[:10]+ " à " + element.date[10:16]) %}</u>
+                            <input onclick="systeme_done({{element.id_work}})" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </figcaption>
+                    </div>
+                </div>
+                {% endfor %}   
+            {% endif %}         
+        </div>
+        <div class="tab-pane fade" id="done">
+            {% if workdone == [] %}
+                <p style="text-align: center;"><img src="./static/Sleeping_bat-rafiki.png" style="width: 400px; height: 400px; margin: auto;" alt=""></p>
+                <p style="text-align: center;">Vous n'avez fait encore aucun devoir. Il serait temps de bouger son cul !</p>
+            {% else %}
+                {% for element in workdone %}
+                <div class="card border-primary mb-3 mx-auto" style="max-width: 50rem;">
+                    <div style="color: {{ element.couleur }}; " class="card-header"><h5>{{ element.titre }}</h5></div>
+                    <div class="card-body">
+                        <p>{{ element.description }}</p>
+                        <br>
+                        <figcaption class="blockquote-footer">A faire pour le <u>{% print(element.date[:10]+ " à " + element.date[10:16]) %}</u>
+                            <input onclick="systeme_done({{element.id_work}})" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                        </figcaption>
+                    </div>
+                </div>
+                {% endfor %}   
+            {% endif %}         
+        </div>
+    </div>
+    </form>
+</body>
+<script src="./static/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="./static/main.js"></script>
+</html>
