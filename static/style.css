@@ -20,3 +20,20 @@
 .formulaire {
     text-align: center;
 }
+
+.nom_catego {
+    position: relative;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.btn-centre {
+    position: relative;
+    margin: 0 auto;
+    margin-right: 0.5rem;
+}
+
+.text-input {
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+}

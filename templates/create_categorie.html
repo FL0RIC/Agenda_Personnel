@@ -16,11 +16,14 @@
     <div class="formulaire">
         <form id="categorie" method="POST" action="/create_categorie">
         
-            <p>Nom de la catégorie : </p>
-            <input type="text" class="form-control" name="nom_categorie" aria-describedby="emailHelp" placeholder="Enter Title">
-            <p>Couleur de la catégorie : </p>
-            <input type="text" value="green" data-coloris>
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <p class="text-input">Nom de la catégorie :</p>
+            <input type="text" class="form-control nom_catego" name="nom_categorie" aria-describedby="emailHelp" placeholder="Nom de la catégorie">
+            <p class="text-input">Couleur de la catégorie :</p>
+            <input type="text" name="color" value="green" data-coloris>
+            <p></p>
+            <input type="button" class="btn btn-secondary btn-centre" onclick="self.location.href='/create_work'" value="Retour">
+            <button type="submit" class="btn btn-primary btn-centre">Valider</button>
+            
             {% if error == True %}
                 <p>Vous avez essayer de crée une catégorie qui possède déjà le nom d'une catégorie existante. Veuillez réessayer.</p>
             {% endif %}
