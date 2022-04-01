@@ -7,31 +7,41 @@
     <link rel="stylesheet" href="./static/style.css">
     <title>Mon Agenda - Création de Tâches</title>
 </head>
-<body>
+<body class="overflow:hidden; ">
     <h1>
         <div class="titre_page">Crée une Tâche</div>
     </h1>
-
-    <form style="display: table-cell; text-align: center; vertical-align: middle; max-width: 40rem;" id="work" method="POST">
+    <div class="formulaire">
+        <form id="work" method="POST">
             <div style="text-align: center;">
+
                 <div class="form-group mx-auto">
-                    <label>Titre de la tâche :</label>
-                    <input type="text" class="form-control" name="titre" aria-describedby="emailHelp" placeholder="Enter Title">
+                    <label class="text-input">Titre de la tâche :</label>
+                    <input type="text" class="form-control nom_tache" name="titre" aria-describedby="emailHelp" placeholder="Enter Title">
                 </div>
-                <label>Descirption de la tâche :</label>
-            <textarea name="descirption" cols="50" rows="3"></textarea>
-            <label>Catégorie de la tâche :</label>
-            <select name="type" id="">
-                {% for categorie in catego %}
-                    <option style="background-color: {{ categorie.couleur }}; ">{% print(categorie.nom) %}</option>
-                {% endfor %}
-            </select>
-            <p>Date de la tâche : </p>
-            <input type="datetime-local" name="date">
-            <button type="submit">Valider</button>
-        </div>
-    </form>
-    <button onclick="self.location.href='/create_categorie'" >Ajouter une catégorie</button> 
-  
+                
+                <label class="text-input">Descirption de la tâche :</label>
+                <br>
+                <textarea name="descirption" cols="50" rows="3"></textarea>
+
+                <br>
+                <label class="text-input">Catégorie de la tâche :</label>
+                <select name="type" id="">
+                    {% for categorie in catego %}
+                        <option style="background-color: {{ categorie.couleur }}; ">{% print(categorie.nom) %}</option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-secondary" type="reset" onclick="self.location.href='/create_categorie'" >Ajouter une catégorie</button> 
+
+                <br>
+                <label>Date de la tâche : </label>
+                <input type="datetime-local" name="date">
+
+                <br>
+                <input type="button" class="btn btn-secondary btn-centre" onclick="self.location.href='/'" value="Retour">
+                <button type="submit" class="btn btn-primary">Valider</button>
+            </div>
+        </form> 
+    </div>
 </body>
 </html>

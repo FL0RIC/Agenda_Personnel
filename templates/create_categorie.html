@@ -18,8 +18,10 @@
         
             <p class="text-input">Nom de la catégorie :</p>
             <input type="text" class="form-control nom_catego" name="nom_categorie" aria-describedby="emailHelp" placeholder="Nom de la catégorie">
+
             <p class="text-input">Couleur de la catégorie :</p>
             <input type="text" name="color" value="green" data-coloris>
+            
             <p></p>
             <input type="button" class="btn btn-secondary btn-centre" onclick="self.location.href='/create_work'" value="Retour">
             <button type="submit" class="btn btn-primary btn-centre">Valider</button>
@@ -30,5 +32,11 @@
         </form>
     </div>
     <script type="text/javascript" src="./static/coloris.min.js"></script>
+    <script>
+        Coloris({
+            themeMode: 'dark',
+            alpha: false
+        });
+    </script>
 </body>
 </html>

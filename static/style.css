@@ -1,6 +1,9 @@
+
+
 .titre_page {
     position:relative;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 1rem;
     box-sizing: border-box;
     width: 35%;
     padding: 5px;
@@ -18,13 +21,26 @@
 }
 
 .formulaire {
+    position: relative;
     text-align: center;
+    margin: auto;
+
+}
+
+.formulaire :nth-child(2n-1) {    
+    margin-bottom: 0rm;
 }
 
 .nom_catego {
     position: relative;
     margin: 0 auto;
     width: 20%;
+}
+
+.nom_tache {
+    position: relative;
+    margin: 0 auto;
+    width: 33.5%;
 }
 
 .btn-centre {
